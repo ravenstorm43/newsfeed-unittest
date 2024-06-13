@@ -46,7 +46,9 @@ public class UserService {
     public UserInfoUpdateDto updateUser(Long userSeq, UserInfoUpdateDto requestDto, MultipartFile file) {
         User user = findById(userSeq);
         if (file != null) {
-            s3Service.deleteFile(user.getPhotoName());
+            if(user.getPhotoName() != null) {
+                s3Service.deleteFile(user.getPhotoName());
+            }
             user.setPhotoName(s3Service.uploadFile(file));
         }
         user.updateUserInfo(requestDto);
