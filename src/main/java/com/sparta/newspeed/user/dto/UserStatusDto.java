@@ -1,10 +1,12 @@
 package com.sparta.newspeed.user.dto;
 
 import jakarta.validation.constraints.Pattern;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 public class UserStatusDto {
     private String userId;

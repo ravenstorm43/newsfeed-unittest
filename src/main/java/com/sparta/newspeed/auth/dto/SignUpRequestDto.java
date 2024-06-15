@@ -25,4 +25,11 @@ public class SignUpRequestDto {
 
     private boolean admin = false;
     private String adminToken = "";
+
+    public SignUpRequestDto(String userId, String password, String userName, String email) {
+        this.userId = userId;
+        this.password = password;
+        this.userName = userName;
+        this.email = email;
+    }
 }
